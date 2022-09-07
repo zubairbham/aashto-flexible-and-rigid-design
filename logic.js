@@ -530,7 +530,7 @@ function calculate(e) {
 
             rhs = (zr * sd) + (7.35 * Math.log10(d + 1)) - 0.06 + ((Math.log10(psi / 3)) / (1 + (16240000 / ((d + 1) ** 8.46)))) + ((4.22 - (0.32 * 2.5)) * Math.log10((ruptureModulus.value * cd * ((d ** 0.75) - 1.132)) / (215.63 * loadTransferCoef.value * ((d ** 0.75) - (18.42 / ((elasticModulus.value / subbaseK) ** 0.25))))));
         }
-        d = Math.ceil(((d * 2) / 2) * 25);
+        d = Math.ceil(d * 25);
         console.log("D=" + d);
 
         displayAwcTh.textContent = 'Cement Concrete Slab (E = ' + elasticModulus.value + ' psi) - ' + d + ' mm';
