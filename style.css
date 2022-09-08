@@ -296,6 +296,9 @@ tfoot td {
         height: 20px;
         line-height: 20px;
     }
+    #my-heading{
+        font-size: 0.9rem;
+    }
 }
 #close-display{
     width: 80px;
