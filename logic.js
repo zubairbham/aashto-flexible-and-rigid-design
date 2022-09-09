@@ -117,30 +117,58 @@ function trafficCalc(e) {
     let tf;
     let gf;
 
-    if (inputValue1.value == "1.2") {
-        tf = 4.134;
-        gf = (((1 + (inputValue3.value / 100)) ** designLife.value) - 1) / (inputValue3.value / 100);
-        esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
-    } else if (inputValue1.value == "1.2-2") {
-        tf = 13.931;
-        gf = (((1 + (inputValue3.value / 100)) ** designLife.value) - 1) / (inputValue3.value / 100);
-        esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
-    } else if (inputValue1.value == "1.22") {
-        tf = 10.325;
-        gf = (((1 + (inputValue3.value / 100)) ** designLife.value) - 1) / (inputValue3.value / 100);
-        esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
-    } else if (inputValue1.value == "1.2-22") {
-        tf = 10.512;
-        gf = (((1 + (inputValue3.value / 100)) ** designLife.value) - 1) / (inputValue3.value / 100);
-        esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
-    } else if (inputValue1.value == "1.22-22") {
-        tf = 8.192;
-        gf = (((1 + (inputValue3.value / 100)) ** designLife.value) - 1) / (inputValue3.value / 100);
-        esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
-    } else if (inputValue1.value == "1.22+222") {
-        tf = 10.789;
-        gf = (((1 + (inputValue3.value / 100)) ** designLife.value) - 1) / (inputValue3.value / 100);
-        esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
+    if (inputValue3.value > 0) {
+        if (inputValue1.value == "1.2") {
+            tf = 4.134;
+            gf = (((1 + (inputValue3.value / 100)) ** designLife.value) - 1) / (inputValue3.value / 100);
+            esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
+        } else if (inputValue1.value == "1.2-2") {
+            tf = 13.931;
+            gf = (((1 + (inputValue3.value / 100)) ** designLife.value) - 1) / (inputValue3.value / 100);
+            esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
+        } else if (inputValue1.value == "1.22") {
+            tf = 10.325;
+            gf = (((1 + (inputValue3.value / 100)) ** designLife.value) - 1) / (inputValue3.value / 100);
+            esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
+        } else if (inputValue1.value == "1.2-22") {
+            tf = 10.512;
+            gf = (((1 + (inputValue3.value / 100)) ** designLife.value) - 1) / (inputValue3.value / 100);
+            esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
+        } else if (inputValue1.value == "1.22-22") {
+            tf = 8.192;
+            gf = (((1 + (inputValue3.value / 100)) ** designLife.value) - 1) / (inputValue3.value / 100);
+            esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
+        } else if (inputValue1.value == "1.22+222") {
+            tf = 10.789;
+            gf = (((1 + (inputValue3.value / 100)) ** designLife.value) - 1) / (inputValue3.value / 100);
+            esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
+        }
+    } else if (inputValue3.value == 0) {
+        if (inputValue1.value == "1.2") {
+            tf = 4.134;
+            gf = designLife.value;
+            esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
+        } else if (inputValue1.value == "1.2-2") {
+            tf = 13.931;
+            gf = designLife.value;
+            esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
+        } else if (inputValue1.value == "1.22") {
+            tf = 10.325;
+            gf = designLife.value;
+            esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
+        } else if (inputValue1.value == "1.2-22") {
+            tf = 10.512;
+            gf = designLife.value;
+            esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
+        } else if (inputValue1.value == "1.22-22") {
+            tf = 8.192;
+            gf = designLife.value;
+            esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
+        } else if (inputValue1.value == "1.22+222") {
+            tf = 10.789;
+            gf = designLife.value;
+            esalValue = Math.round(tf * gf * dd * dl * inputValue2.value * 365);
+        }
     }
 
     if (inputValue1.value != "" && inputValue2.value != "" && inputValue3.value != "") {
