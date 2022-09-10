@@ -76,17 +76,25 @@ function showTrafficBox(e) {
         if (sgCbrValue.value == "" || sbCbrValue.value == "" || bsCbrValue.value == "" || abModulus.value == "" || awModulus.value == "") {
             alert("Some fields are empty.");
         } else {
-            trafficBox.style = "display: block;";
-            calcBtnBox.style = "display: block;";
-            materialNextBtn.style = "display: none;";
+            if (isNaN(sgCbrValue.value) == false) {
+                trafficBox.style = "display: block;";
+                calcBtnBox.style = "display: block;";
+                materialNextBtn.style = "display: none;";
+            } else {
+                alert("Invalid Input");
+            }
         }
     } else if (pavtType.value == "rigid") {
         if (sgCbrValue.value == "" || ruptureModulus.value == "" || elasticModulus.value == "" || loadTransferCoef.value == "" || subbaseThickness.value == "") {
             alert("Some fields are empty.");
         } else {
+            if (isNaN(sgCbrValue.value) == false) {
             trafficBox.style = "display: block;";
             calcBtnBox.style = "display: block;";
             materialNextBtn.style = "display: none;";
+            } else {
+                alert("Invalid Input");
+            }
         }
     }
 }
@@ -171,19 +179,23 @@ function trafficCalc(e) {
         }
     }
 
-    if (inputValue1.value != "" && inputValue2.value != "" && inputValue3.value != "") {
-        let zub = document.createElement('tr');
-        zub.innerHTML = `<td>` + inputValue1.value + `</td>
+    if (isNaN(esalValue) == false) {
+        if (inputValue1.value != "" && inputValue2.value != "" && inputValue3.value != "") {
+            let zub = document.createElement('tr');
+            zub.innerHTML = `<td>` + inputValue1.value + `</td>
         <td>`+ inputValue2.value + `</td>
         <td>`+ inputValue3.value + `</td>
         <td  id="esal">`+ esalValue + `</td>`;
-        tableBody.append(zub);
+            tableBody.append(zub);
+        } else {
+            esalValue = 0;
+            alert("Some fields are empty.")
+        }
+        commuEsal = commuEsal + esalValue
+        totalEsal.innerHTML = commuEsal;
     } else {
-        esalValue = 0;
-        alert("Some fields are empty.")
+        alert("Invalid Input");
     }
-    commuEsal = commuEsal + esalValue
-    totalEsal.innerHTML = commuEsal;
 }
 
 
