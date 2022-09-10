@@ -88,7 +88,7 @@ function showTrafficBox(e) {
         if (sgCbrValue.value == "" || ruptureModulus.value == "" || elasticModulus.value == "" || loadTransferCoef.value == "" || subbaseThickness.value == "") {
             alert("Some fields are empty.");
         } else {
-            if (isNaN(sgCbrValue.value) == false) {
+            if (isNaN(sgCbrValue.value) == false && isNaN(ruptureModulus.value) == false && isNaN(elasticModulus.value) == false && isNaN(loadTransferCoef.value) == false) {
             trafficBox.style = "display: block;";
             calcBtnBox.style = "display: block;";
             materialNextBtn.style = "display: none;";
